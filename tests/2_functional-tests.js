@@ -22,15 +22,17 @@ suite('Functional Tests', function() {
         .post('/api/issues/test')
         .send({
           issue_title: 'Title',
-          issue_text: 'text',
+          issue_text: 'text', 
           created_by: 'Functional Test - Every field filled in',
           assigned_to: 'Chai and Mocha',
           status_text: 'In QA'
         })
         .end(function(err, res){
-          assert.equal(res.status, 200);
+          assert.equal(res.status, 200)
+          console.log(res)
+          // check all fields not null
+          //assert.isNotNull()
           
-          //fill me in too!
           
           done();
         });

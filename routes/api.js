@@ -11,6 +11,7 @@
 var expect = require('chai').expect;
 var MongoClient = require('mongodb');
 var ObjectId = require('mongodb').ObjectID;
+var route = require('./routecontroller.js')
 
 const CONNECTION_STRING = process.env.DB; //MongoClient.connect(CONNECTION_STRING, function(err, db) {});
 
@@ -19,23 +20,19 @@ module.exports = function (app) {
   app.route('/api/issues/:project')
   
     .get(function (req, res){
-      var project = req.params.project;
-      
+    route.get(req,res)      
     })
     
     .post(function (req, res){
-      var project = req.params.project;
-      
+      route.post(req,res)
     })
     
     .put(function (req, res){
-      var project = req.params.project;
-      
+      route.put(req,res)
     })
     
     .delete(function (req, res){
-      var project = req.params.project;
-      
+      route.delete(req,res)
     });
     
 };
